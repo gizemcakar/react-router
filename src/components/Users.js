@@ -55,8 +55,10 @@ export default function Users() {
             <h1>All Users</h1>
             <ul style={{ listStyle: 'none', padding: 0 }}>
                 {users.map(user => (
-                    <li key={user.id}>
-                        <h3 style={{ margin: '0', color: '#333' }}>{user.name}</h3>
+                    <li key={user.id} style={{ marginBottom: '10px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px', backgroundColor: '#f9f9f9' }}>
+                        <Link to={`/user/${user.id}`} style={{ textDecoration: 'none', color: '#007bff' }}>
+                            <h3 style={{ margin: '0', color: '#007bff' }}>{user.name}</h3>
+                        </Link>
                     </li>
                 ))}
             </ul>

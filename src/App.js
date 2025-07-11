@@ -4,6 +4,8 @@ import './App.css';
 import Home from './components/Home';
 import About from './components/About';
 import Users from './components/Users';
+import UserProfile from './components/UserProfile';
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/users" element={<Users />} />
+            <Route path="/user/:id" element={<UserProfile />} />
           </Routes>
         </div>
     </Router>

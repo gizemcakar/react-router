@@ -4,6 +4,9 @@ import './App.css';
 import Home from './components/Home';
 import About from './components/About';
 import Users from './components/Users';
+import UsersList from './components/UsersList';
+import ActiveUsers from './components/ActiveUsers';
+import Favorites from './components/Favorites';
 import UserProfile from './components/UserProfile';
 
 
@@ -21,8 +24,14 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/users" element={<Users />} />
-            <Route path="/user/:id" element={<UserProfile />} />
+            
+            {/* Nested Users Routes */}
+            <Route path="/users" element={<Users />}>
+              <Route index element={<UsersList />} />
+              <Route path="active" element={<ActiveUsers />} />
+              <Route path="favorites" element={<Favorites />} />
+              <Route path=":id" element={<UserProfile />} />
+            </Route>
           </Routes>
         </div>
     </Router>
